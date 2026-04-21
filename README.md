@@ -1,6 +1,6 @@
-# Karpathy-Inspired Claude Code Guidelines
+# Karpathy-Inspired Coding Skill
 
-A shared set of behavioral guidelines for Claude Code, Cursor, and Codex, derived from [Andrej Karpathy's observations](https://x.com/karpathy/status/2015883857489522876) on LLM coding pitfalls.
+A reusable skill and companion instruction set for Claude Code, Cursor, Codex, and similar coding agents, derived from [Andrej Karpathy's observations](https://x.com/karpathy/status/2015883857489522876) on LLM coding pitfalls.
 
 > Upstream credit: This repository builds on [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills).
 
@@ -96,50 +96,33 @@ Strong success criteria let the LLM loop independently. Weak criteria ("make it 
 
 ## Install
 
-**Option A: Claude Code Plugin (recommended)**
+**Option A: Reusable skill (recommended)**
 
-From within Claude Code, first add the marketplace:
-```
-/plugin marketplace add forrestchang/andrej-karpathy-skills
-```
+Start from [`skills/karpathy-guidelines/SKILL.md`](skills/karpathy-guidelines/SKILL.md) and copy or symlink the [`skills/karpathy-guidelines/`](skills/karpathy-guidelines/) directory into your local skills directory, such as `~/.claude/skills/`, `~/.cursor/skills/`, or the equivalent location for your agent.
 
-Then install the plugin:
-```
-/plugin install andrej-karpathy-skills@karpathy-skills
-```
+**Option B: CLAUDE.md compatibility**
 
-This installs the guidelines as a Claude Code plugin, making the skill available across all your projects.
-
-**Option B: CLAUDE.md (per-project)**
-
-New project:
-```bash
-curl -o CLAUDE.md https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/CLAUDE.md
-```
-
-Existing project (append):
-```bash
-echo "" >> CLAUDE.md
-curl https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/CLAUDE.md >> CLAUDE.md
-```
+If your tool prefers a project-level instruction file, add the generated [`CLAUDE.md`](CLAUDE.md) to the project root or merge its contents into your existing instructions.
 
 ## Using with Cursor
 
 This repository includes a committed Cursor project rule ([`.cursor/rules/karpathy-guidelines.mdc`](.cursor/rules/karpathy-guidelines.mdc)) so the same guidelines apply when you open the project in Cursor. See **[CURSOR.md](CURSOR.md)** for setup, using the rule in other projects, and how this relates to Claude Code.
 
-## Using with Codex
+## Generated Artifacts
 
-This repository now includes a repo-local Codex plugin package:
+The editable source of truth is [`skills/karpathy-guidelines/content.md`](skills/karpathy-guidelines/content.md).
 
-- Marketplace catalog: [`.agents/plugins/marketplace.json`](.agents/plugins/marketplace.json)
-- Plugin payload: [`plugins/andrej-karpathy-skills/`](plugins/andrej-karpathy-skills/)
-- Codex manifest: [`plugins/andrej-karpathy-skills/.codex-plugin/plugin.json`](plugins/andrej-karpathy-skills/.codex-plugin/plugin.json)
-
-The shared guideline text is sourced from [`plugins/andrej-karpathy-skills/content/karpathy-guidelines.md`](plugins/andrej-karpathy-skills/content/karpathy-guidelines.md). Codex's skill copy, the root [`CLAUDE.md`](CLAUDE.md), and the Cursor rule are generated from that source with:
+Run the renderer to regenerate:
 
 ```bash
 python3 scripts/render_guideline_artifacts.py
 ```
+
+This updates:
+
+- [`skills/karpathy-guidelines/SKILL.md`](skills/karpathy-guidelines/SKILL.md)
+- [`CLAUDE.md`](CLAUDE.md)
+- [`.cursor/rules/karpathy-guidelines.mdc`](.cursor/rules/karpathy-guidelines.mdc)
 
 To verify those generated files are still in sync:
 
@@ -186,14 +169,14 @@ The goal is reducing costly mistakes on non-trivial work, not slowing down simpl
 
 ## For Contributors
 
-If you change the four principles, edit [`plugins/andrej-karpathy-skills/content/karpathy-guidelines.md`](plugins/andrej-karpathy-skills/content/karpathy-guidelines.md) and regenerate the derived artifacts:
+If you change the four principles, edit [`skills/karpathy-guidelines/content.md`](skills/karpathy-guidelines/content.md) and regenerate the derived artifacts:
 
 ```bash
 python3 scripts/render_guideline_artifacts.py
 python3 scripts/render_guideline_artifacts.py --check
 ```
 
-Do not hand-edit [`CLAUDE.md`](CLAUDE.md), [`.cursor/rules/karpathy-guidelines.mdc`](.cursor/rules/karpathy-guidelines.mdc), [`skills/karpathy-guidelines/SKILL.md`](skills/karpathy-guidelines/SKILL.md), or [`plugins/andrej-karpathy-skills/skills/karpathy-guidelines/SKILL.md`](plugins/andrej-karpathy-skills/skills/karpathy-guidelines/SKILL.md).
+Do not hand-edit [`CLAUDE.md`](CLAUDE.md), [`.cursor/rules/karpathy-guidelines.mdc`](.cursor/rules/karpathy-guidelines.mdc), or [`skills/karpathy-guidelines/SKILL.md`](skills/karpathy-guidelines/SKILL.md).
 
 ## License
 
