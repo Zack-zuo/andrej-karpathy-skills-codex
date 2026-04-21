@@ -1,20 +1,20 @@
 # Using this repo with Cursor
 
-This project is a reusable skill repository that also commits a generated **Cursor project rule** so the Karpathy-inspired behavioral guidelines apply automatically when you work here.
+This project commits a generated **Cursor project rule** so the Karpathy-inspired behavioral guidelines apply automatically when you work here, and it also publishes a reusable skill for tools that load that format.
 
 > Upstream credit: This repository builds on [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills).
 
 ## In this repository
 
 1. Open the folder in Cursor.
-2. The rule [`.cursor/rules/karpathy-guidelines.mdc`](.cursor/rules/karpathy-guidelines.mdc) is committed with `alwaysApply: true`, so you do not need extra installation steps.
+2. Cursor uses the committed [`.cursor/rules/karpathy-guidelines.mdc`](.cursor/rules/karpathy-guidelines.mdc) artifact in this repo with `alwaysApply: true`, so you do not need extra installation steps.
 3. In Cursor, you can confirm it under **Settings → Rules** (or the project rules UI), where `karpathy-guidelines` should appear.
 
 ## Use the same guidelines in another project
 
 **Cursor rule copy:** Copy `.cursor/rules/karpathy-guidelines.mdc` into that project’s `.cursor/rules/` directory (create the folders if needed). Adjust or merge with existing rules as you like.
 
-**Reusable skill copy or symlink:** Start from [`skills/karpathy-guidelines/SKILL.md`](skills/karpathy-guidelines/SKILL.md) and copy or symlink the [`skills/karpathy-guidelines/`](skills/karpathy-guidelines/) directory into your local skills directory for tools that load reusable skills.
+**Reusable skill copy or symlink:** For Claude Code and other tools that load reusable skills, start from [`skills/karpathy-guidelines/SKILL.md`](skills/karpathy-guidelines/SKILL.md) and copy or symlink the [`skills/karpathy-guidelines/`](skills/karpathy-guidelines/) directory into the documented skills directory for that tool.
 
 **CLAUDE.md compatibility:** If a tool wants a project-level instruction file, copy [`CLAUDE.md`](CLAUDE.md) into that project or merge its contents into the existing instructions.
 
