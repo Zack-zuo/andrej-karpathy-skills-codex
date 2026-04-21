@@ -4,6 +4,8 @@ import tempfile
 import unittest
 from pathlib import Path
 
+from scripts.render_guideline_artifacts import render_outputs
+
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 SCRIPT_PATH = Path("scripts/render_guideline_artifacts.py")
@@ -53,6 +55,11 @@ class RenderGuidelineArtifactsTest(unittest.TestCase):
             source_path.read_text()
             + "\n\n## Drift Marker\n\nRender this exact sentence into every generated artifact.\n",
             encoding="utf-8",
+        )
+
+        self.assertEqual(
+            set(render_outputs(repo_root).keys()),
+            set(GENERATED_FILES),
         )
 
         result = self.run_script(repo_root)
