@@ -4,7 +4,7 @@
 >
 > 在 X 上关注我：[https://x.com/jiayuan_jy](https://x.com/jiayuan_jy)
 
-一个单一的 `CLAUDE.md` 文件，用于改善 Claude Code 的行为，源自 [Andrej Karpathy 的观察](https://x.com/karpathy/status/2015883857489522876) 关于 LLM 编码陷阱的总结。
+一套可在 Claude Code、Cursor 和 Codex 中复用的行为指南，源自 [Andrej Karpathy 的观察](https://x.com/karpathy/status/2015883857489522876) 关于 LLM 编码陷阱的总结。
 
 [English](./README.md) | 简体中文
 
@@ -129,6 +129,26 @@ curl https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/
 
 本仓库包含一个已提交的 Cursor 项目规则 ([`.cursor/rules/karpathy-guidelines.mdc`](.cursor/rules/karpathy-guidelines.mdc))，因此在 Cursor 中打开项目时同样适用这些指南。详情请参见 **[CURSOR.md](CURSOR.md)**，包括如何在其他项目中使用该规则，以及它与 Claude Code 的关系。
 
+## 在 Codex 中使用
+
+本仓库现在包含一个仓库内的 Codex 插件包：
+
+- 市场目录：[`.agents/plugins/marketplace.json`](.agents/plugins/marketplace.json)
+- 插件内容目录：[`plugins/andrej-karpathy-skills/`](plugins/andrej-karpathy-skills/)
+- Codex 清单：[`plugins/andrej-karpathy-skills/.codex-plugin/plugin.json`](plugins/andrej-karpathy-skills/.codex-plugin/plugin.json)
+
+共享的指南正文来自 [`plugins/andrej-karpathy-skills/content/karpathy-guidelines.md`](plugins/andrej-karpathy-skills/content/karpathy-guidelines.md)。Codex 技能副本、根目录下的 [`CLAUDE.md`](CLAUDE.md) 以及 Cursor 规则都由下面的脚本生成：
+
+```bash
+python3 scripts/render_guideline_artifacts.py
+```
+
+如果你想检查这些生成文件是否仍然同步：
+
+```bash
+python3 scripts/render_guideline_artifacts.py --check
+```
+
 ## 核心洞察
 
 来自 Andrej：
@@ -165,6 +185,17 @@ curl https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/
 这些指南倾向于**谨慎而非速度**。对于琐碎的任务（简单的拼写错误修复、显而易见的一行修改），请自行判断 —— 并非每个改动都需要完整的严谨流程。
 
 目标是减少非琐碎工作中的代价高昂的错误，而不是拖慢简单任务。
+
+## 贡献者说明
+
+如果你要修改这四条原则，请编辑 [`plugins/andrej-karpathy-skills/content/karpathy-guidelines.md`](plugins/andrej-karpathy-skills/content/karpathy-guidelines.md)，然后重新生成派生文件：
+
+```bash
+python3 scripts/render_guideline_artifacts.py
+python3 scripts/render_guideline_artifacts.py --check
+```
+
+不要手动编辑 [`CLAUDE.md`](CLAUDE.md)、[`.cursor/rules/karpathy-guidelines.mdc`](.cursor/rules/karpathy-guidelines.mdc)、[`skills/karpathy-guidelines/SKILL.md`](skills/karpathy-guidelines/SKILL.md) 或 [`plugins/andrej-karpathy-skills/skills/karpathy-guidelines/SKILL.md`](plugins/andrej-karpathy-skills/skills/karpathy-guidelines/SKILL.md)。
 
 ## 许可
 

@@ -4,7 +4,7 @@
 >
 > Follow me on X: [https://x.com/jiayuan_jy](https://x.com/jiayuan_jy)
 
-A single `CLAUDE.md` file to improve Claude Code behavior, derived from [Andrej Karpathy's observations](https://x.com/karpathy/status/2015883857489522876) on LLM coding pitfalls.
+A shared set of behavioral guidelines for Claude Code, Cursor, and Codex, derived from [Andrej Karpathy's observations](https://x.com/karpathy/status/2015883857489522876) on LLM coding pitfalls.
 
 English | [简体中文](./README.zh.md)
 
@@ -129,6 +129,26 @@ curl https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/
 
 This repository includes a committed Cursor project rule ([`.cursor/rules/karpathy-guidelines.mdc`](.cursor/rules/karpathy-guidelines.mdc)) so the same guidelines apply when you open the project in Cursor. See **[CURSOR.md](CURSOR.md)** for setup, using the rule in other projects, and how this relates to Claude Code.
 
+## Using with Codex
+
+This repository now includes a repo-local Codex plugin package:
+
+- Marketplace catalog: [`.agents/plugins/marketplace.json`](.agents/plugins/marketplace.json)
+- Plugin payload: [`plugins/andrej-karpathy-skills/`](plugins/andrej-karpathy-skills/)
+- Codex manifest: [`plugins/andrej-karpathy-skills/.codex-plugin/plugin.json`](plugins/andrej-karpathy-skills/.codex-plugin/plugin.json)
+
+The shared guideline text is sourced from [`plugins/andrej-karpathy-skills/content/karpathy-guidelines.md`](plugins/andrej-karpathy-skills/content/karpathy-guidelines.md). Codex's skill copy, the root [`CLAUDE.md`](CLAUDE.md), and the Cursor rule are generated from that source with:
+
+```bash
+python3 scripts/render_guideline_artifacts.py
+```
+
+To verify those generated files are still in sync:
+
+```bash
+python3 scripts/render_guideline_artifacts.py --check
+```
+
 ## Key Insight
 
 From Andrej:
@@ -165,6 +185,17 @@ For project-specific rules, add sections like:
 These guidelines bias toward **caution over speed**. For trivial tasks (simple typo fixes, obvious one-liners), use judgment — not every change needs the full rigor.
 
 The goal is reducing costly mistakes on non-trivial work, not slowing down simple tasks.
+
+## For Contributors
+
+If you change the four principles, edit [`plugins/andrej-karpathy-skills/content/karpathy-guidelines.md`](plugins/andrej-karpathy-skills/content/karpathy-guidelines.md) and regenerate the derived artifacts:
+
+```bash
+python3 scripts/render_guideline_artifacts.py
+python3 scripts/render_guideline_artifacts.py --check
+```
+
+Do not hand-edit [`CLAUDE.md`](CLAUDE.md), [`.cursor/rules/karpathy-guidelines.mdc`](.cursor/rules/karpathy-guidelines.mdc), [`skills/karpathy-guidelines/SKILL.md`](skills/karpathy-guidelines/SKILL.md), or [`plugins/andrej-karpathy-skills/skills/karpathy-guidelines/SKILL.md`](plugins/andrej-karpathy-skills/skills/karpathy-guidelines/SKILL.md).
 
 ## License
 
