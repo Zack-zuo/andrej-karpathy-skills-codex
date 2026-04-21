@@ -1,10 +1,8 @@
 # 受 Karpathy 启发的 Claude Code 指南
 
-> 查看我的新项目 [Multica](https://github.com/multica-ai/multica) —— 一个用于运行和管理编码智能体的开源平台，支持可复用的技能。
->
-> 在 X 上关注我：[https://x.com/jiayuan_jy](https://x.com/jiayuan_jy)
-
 一套可在 Claude Code、Cursor 和 Codex 中复用的行为指南，源自 [Andrej Karpathy 的观察](https://x.com/karpathy/status/2015883857489522876) 关于 LLM 编码陷阱的总结。
+
+> 上游致谢：本仓库基于 [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills) 整理与扩展。
 
 [English](./README.md) | 简体中文
 

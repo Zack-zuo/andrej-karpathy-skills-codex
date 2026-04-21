@@ -2,6 +2,8 @@
 
 This project includes a **Cursor project rule** so the Karpathy-inspired behavioral guidelines apply automatically when you work here.
 
+> Upstream credit: This repository builds on [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills).
+
 ## In this repository
 
 1. Open the folder in Cursor.

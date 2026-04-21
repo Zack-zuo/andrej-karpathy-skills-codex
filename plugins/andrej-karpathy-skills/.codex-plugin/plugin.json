@@ -3,11 +3,11 @@
   "version": "1.1.0",
   "description": "Behavioral guidelines to reduce common LLM coding mistakes, packaged as a reusable Codex plugin.",
   "author": {
-    "name": "Zack-zuo",
-    "url": "https://github.com/Zack-zuo"
+    "name": "forrestchang",
+    "url": "https://github.com/forrestchang/andrej-karpathy-skills"
   },
-  "homepage": "https://github.com/Zack-zuo/andrej-karpathy-skills",
-  "repository": "https://github.com/Zack-zuo/andrej-karpathy-skills",
+  "homepage": "https://github.com/forrestchang/andrej-karpathy-skills",
+  "repository": "https://github.com/forrestchang/andrej-karpathy-skills",
   "license": "MIT",
   "keywords": [
     "guidelines",
@@ -21,14 +21,14 @@
     "displayName": "Andrej Karpathy Skills",
     "shortDescription": "Bring Karpathy-inspired coding guidelines into Codex.",
     "longDescription": "Install Karpathy-inspired coding guidelines in Codex so the agent surfaces assumptions, pushes toward simpler implementations, keeps changes surgical, and works from explicit success criteria.",
-    "developerName": "Zack-zuo",
+    "developerName": "forrestchang",
     "category": "Coding",
     "capabilities": [
       "Interactive",
       "Read",
       "Write"
     ],
-    "websiteURL": "https://github.com/Zack-zuo/andrej-karpathy-skills",
+    "websiteURL": "https://github.com/forrestchang/andrej-karpathy-skills",
     "defaultPrompt": [
       "Before I implement this, what assumptions am I making?",
       "Simplify this design and remove unnecessary abstraction",

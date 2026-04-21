@@ -1,10 +1,8 @@
 # Karpathy-Inspired Claude Code Guidelines
 
-> Check out my new project [Multica](https://github.com/multica-ai/multica) — an open-source platform for running and managing coding agents with reusable skills.
->
-> Follow me on X: [https://x.com/jiayuan_jy](https://x.com/jiayuan_jy)
-
 A shared set of behavioral guidelines for Claude Code, Cursor, and Codex, derived from [Andrej Karpathy's observations](https://x.com/karpathy/status/2015883857489522876) on LLM coding pitfalls.
+
+> Upstream credit: This repository builds on [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills).
 
 English | [简体中文](./README.zh.md)
 

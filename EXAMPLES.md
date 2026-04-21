@@ -2,6 +2,8 @@
 
 Real-world code examples demonstrating the four principles. Each example shows what LLMs commonly do wrong and how to fix it.
 
+> Upstream credit: This repository builds on [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills).
+
 ---
 
 ## 1. Think Before Coding
