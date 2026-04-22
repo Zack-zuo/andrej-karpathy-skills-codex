@@ -98,7 +98,7 @@ Strong success criteria let the LLM loop independently. Weak criteria ("make it 
 
 **Option A: Reusable skill (recommended)**
 
-Start from [`skills/karpathy-guidelines/SKILL.md`](skills/karpathy-guidelines/SKILL.md) and copy or symlink the [`skills/karpathy-guidelines/`](skills/karpathy-guidelines/) directory into your local skills directory, such as `~/.claude/skills/`, `~/.cursor/skills/`, or the equivalent location for your agent.
+Start from [`skills/karpathy-guidelines/SKILL.md`](skills/karpathy-guidelines/SKILL.md) and copy or symlink the [`skills/karpathy-guidelines/`](skills/karpathy-guidelines/) directory into your local Claude Code skills directory. Other agents should use their documented skills directory if they support the same format.
 
 **Option B: CLAUDE.md compatibility**
 

@@ -4,14 +4,15 @@ import tempfile
 import unittest
 from pathlib import Path
 
+from scripts.render_guideline_artifacts import render_outputs
+
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 SCRIPT_PATH = Path("scripts/render_guideline_artifacts.py")
 CANONICAL_SOURCE = Path(
-    "plugins/andrej-karpathy-skills/content/karpathy-guidelines.md"
+    "skills/karpathy-guidelines/content.md"
 )
 GENERATED_FILES = [
-    Path("plugins/andrej-karpathy-skills/skills/karpathy-guidelines/SKILL.md"),
     Path("skills/karpathy-guidelines/SKILL.md"),
     Path("CLAUDE.md"),
     Path(".cursor/rules/karpathy-guidelines.mdc"),
@@ -54,6 +55,11 @@ class RenderGuidelineArtifactsTest(unittest.TestCase):
             source_path.read_text()
             + "\n\n## Drift Marker\n\nRender this exact sentence into every generated artifact.\n",
             encoding="utf-8",
+        )
+
+        self.assertEqual(
+            set(render_outputs(repo_root).keys()),
+            set(GENERATED_FILES),
         )
 
         result = self.run_script(repo_root)
